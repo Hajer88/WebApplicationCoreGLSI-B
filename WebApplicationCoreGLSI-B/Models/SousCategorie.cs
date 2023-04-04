@@ -6,6 +6,7 @@
         public string Name { get; set; }
 
         public int categorieId { get; set; }
-        public Categorie categorie { get; set; }
+        public Categorie? categorie { get; set; }
+        public ICollection<Produit>? produits { get; set; }
     }
 }

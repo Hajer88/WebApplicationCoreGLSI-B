@@ -6,7 +6,7 @@ namespace WebApplicationCoreGLSI_B.Models
     {
         public int Id { get; set; }
         //public int Id { get; set; }
-        [Display(Name ="Name of Category")]
-        public string Name { get; set; }
+        [Display(Name = "Name of Category")]
+        public string Name { get; set; } 
     }
 }
