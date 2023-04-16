@@ -62,6 +62,7 @@ namespace WebApplicationCoreGLSI_B.Controllers
             return RedirectToAction(nameof
                 (Index));
         }
+
         //[HttpPost]
         //[ActionName("Delete")]
         //public IActionResult DeleteConfirmed(int? id)

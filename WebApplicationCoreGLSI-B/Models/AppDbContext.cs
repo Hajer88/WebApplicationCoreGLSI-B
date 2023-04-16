@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace WebApplicationCoreGLSI_B.Models
 {
@@ -37,9 +38,15 @@ namespace WebApplicationCoreGLSI_B.Models
             //model.Entity<SousCategorie>()
             //    .HasMany(t => t.produits)
             //    .WithMany(c => c.ssCategories);
-               
-            
-            
+            //string CatJson = System.IO.File.ReadAllText("Categorie.Json");
+            //List<Categorie> categories = System.Text.Json.
+            //JsonSerializer.Deserialize<List<Categorie>>(CatJson);
+            ////Seed to categorie
+            //foreach (Categorie c in categories)
+            //    model.Entity<Categorie>()
+            //    .HasData(c);
+
+
         }
     
     }
