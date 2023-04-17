@@ -19,13 +19,13 @@ namespace WebApplicationCoreGLSI_B.Controllers
             var c = _context.cats.ToList();
             return View(c);
         }
-        [Route("DownloadFile")]
-        public IActionResult DowloadFile()
-        {
-            byte[] bytes = System.IO.File
-                .ReadAllBytes(@"C:\Users\TEK-UP\Desktop\Document.pdf");
-            return File(bytes, "application/pdf");
-        }
+        //[Route("DownloadFile")]
+        //public IActionResult DowloadFile()
+        //{
+        //    byte[] bytes = System.IO.File
+        //        .ReadAllBytes(@"C:\Users\TEK-UP\Desktop\Document.pdf");
+        //    return File(bytes, "application/pdf");
+        //}
         public IActionResult Create()
         {
             return View();

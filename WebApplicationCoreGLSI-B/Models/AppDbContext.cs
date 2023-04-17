@@ -20,7 +20,7 @@ namespace WebApplicationCoreGLSI_B.Models
             model.Entity<Categorie>().ToTable("Categories");
             model.Entity<Categorie>()
                 .Property(c => c.Name)
-                .HasColumnName("Categorie Name")
+                .HasColumnName("CategorieName")
                 .HasColumnType("varchar(20)")
                 .HasDefaultValue("A");
             model.Entity<SousCategorie>()

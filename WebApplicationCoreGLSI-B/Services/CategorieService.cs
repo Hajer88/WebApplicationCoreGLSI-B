@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebApplicationCoreGLSI_B.Models;
 using WebApplicationCoreGLSI_B.ServicesContracts;
 
@@ -12,9 +13,28 @@ namespace WebApplicationCoreGLSI_B.Services
             _context = context;
         }
 
-        public Categorie Edit(int id)
+        public async Task<Categorie> Create(Categorie c)
         {
-            throw new NotImplementedException();
+            _context.cats.Add(c);
+            await _context.SaveChangesAsync();
+            return c;
+        }
+
+        public void Delete(int Id)
+        {
+            var cat = _context.cats.Find(Id);
+            _context.cats.Remove(cat);
+            _context.SaveChanges();
+        }
+
+        public Categorie Edit(int Id, Categorie c)
+        {
+            var catInDb=  _context.cats.Find(Id);
+
+            _context.cats.Update(catInDb);
+            _context.SaveChanges();
+            return c;
+
         }
 
         public async Task<ICollection<Categorie>> GetAll()
