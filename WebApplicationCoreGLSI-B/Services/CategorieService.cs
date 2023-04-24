@@ -23,6 +23,13 @@ namespace WebApplicationCoreGLSI_B.Services
         public void Delete(int Id)
         {
             var cat = _context.cats.Find(Id);
+            //var sscats = _context.sscats
+            //    .Where(c => c.categorieId == Id)
+            //    .ToList();
+            //foreach(var item in sscats) { 
+            //_context.sscats.Remove(item);
+            //    _context.SaveChanges();
+            //}
             _context.cats.Remove(cat);
             _context.SaveChanges();
         }
