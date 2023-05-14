@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebApplicationCoreGLSI_B.Models;
+using WebApplicationCoreGLSI_B.Models.DTO;
 using WebApplicationCoreGLSI_B.ServicesContracts;
 
 namespace WebApplicationCoreGLSI_B.Controllers.APIControllers
@@ -21,13 +22,13 @@ namespace WebApplicationCoreGLSI_B.Controllers.APIControllers
             return Ok(categories);
         }
         [HttpPost]
-        public async Task<IActionResult> CreateCat(Categorie c)
+        public async Task<IActionResult> CreateCat(CategorieDTO c)
         {
                 var cat = await categorieService.Create(c);
             return Ok(cat);
         }
         [HttpPut]
-        public IActionResult EditCat(int Id, Categorie c)
+        public IActionResult EditCat(int Id, CategorieDTO c)
         {
             var cat = categorieService.Edit(Id, c);
             return Ok(cat);

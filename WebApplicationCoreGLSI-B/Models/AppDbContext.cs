@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 
 namespace WebApplicationCoreGLSI_B.Models
 {
-    public class AppDbContext :DbContext
+    public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions
             <AppDbContext> options):base(options)
@@ -16,6 +17,7 @@ namespace WebApplicationCoreGLSI_B.Models
     
         protected override void OnModelCreating(ModelBuilder model)
         {
+            base.OnModelCreating(model);
             //Fluent API Entité
             model.Entity<Categorie>().ToTable("Categories");
             model.Entity<Categorie>()

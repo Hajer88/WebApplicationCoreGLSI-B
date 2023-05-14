@@ -18,5 +18,19 @@ namespace WebApplicationCoreGLSI_B.Controllers.APIControllers
             var c = _service.getAll();
             return Ok(c);
         }
+        [HttpGet]
+        [Route("{name}")]
+        public IActionResult GetssCatByName(string name)
+        {
+            var c = _service.getByCatName(name);
+            return Ok(c);
+        }
+        [HttpGet]
+        [Route("/api/getOrderBy")]
+        public IActionResult GetssCatOrdered()
+        {
+            var x = _service.getAllssCatOrderBy();
+            return Ok(x);
+        }
     }
 }
